@@ -1,0 +1,7 @@
+---
+applications:
+- name: dhs-odata-demo
+  memory: 512M
+  instances: 1
+  host: dhs-odata-demo-${random-word}
+  path: ./target/DHSODataSpringBoot-0.0.1-SNAPSHOT.jar

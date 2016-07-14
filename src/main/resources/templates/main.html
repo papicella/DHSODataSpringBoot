@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>OData Demo</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://run.pivotal.io/">
+                <img src="images/PoweredByPivotal1.png"
+                     th:src="@{images/PoweredByPivotal1.png}"
+                     alt="Pivotal"
+                     border="0"/>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right  ">
+                <li>
+                    <a th:href="@{/}">
+                        <img src="images/b_home.png"
+                             th:src="@{images/b_home.png}"
+                             alt="Home"
+                             border="0"/>
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- NAVBAR CODE END -->
+
+
+<div class="bs-example">
+    <div class="page-header">
+        <h1>DHS <small>OData Demo</small></h1>
+    </div>
+</div>
+
+<div class="bs-example">
+    <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Success!</strong> Retrieved data from URL http://services.odata.org/V4/(S(ikjres3r2esakregioq03ll1))/TripPinServiceRW/People
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <table class="table table-hover table-bordered table-striped table-condensed">
+        <thead>
+        <tr>
+            <th colspan="5" style="text-align:center"><b>People</b></th>
+        </tr>
+        <tr>
+            <th style="text-align:center">User Name</th>
+            <th style="text-align:center">First Name</th>
+            <th style="text-align:center">Last Name</th>
+            <th style="text-align:center">Gender</th>
+            <th style="text-align:center">Concurrency</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="person : ${people}">
+                <td th:text="${person.userName}" style="text-align:center"></td>
+                <td th:text="${person.firstName}" style="text-align:center"></td>
+                <td th:text="${person.lastName}" style="text-align:center"></td>
+                <td th:text="${person.gender}" style="text-align:center"></td>
+                <td th:text="${person.concurrency}" style="text-align:center"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr size="2" />
+
+<div th:include="footer :: copy"></div>
+
+</body>
+</html>
