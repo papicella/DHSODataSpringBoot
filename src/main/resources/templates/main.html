@@ -79,7 +79,7 @@
     </div>
 </div>
 
-<div class="col-xs-6">
+<div class="col-xs-10">
     <table id="datatable-mysql" class="table table-hover table-bordered table-striped table-condensed">
         <thead>
         <tr>
@@ -95,7 +95,7 @@
         </thead>
         <tbody>
             <tr th:each="person : ${people}">
-                <td th:text="${person.userName}" style="text-align:center"></td>
+                <td th:text="${person.userName}" style="text-align:center;width:23%"></td>
                 <td th:text="${person.firstName}" style="text-align:center"></td>
                 <td th:text="${person.lastName}" style="text-align:center"></td>
                 <td th:text="${person.gender}" style="text-align:center"></td>
