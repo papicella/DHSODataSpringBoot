@@ -18,6 +18,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
+    <link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('#datatable-mysql').DataTable();
+        } );
+    </script>
 </head>
 <body>
 <div class="navbar navbar-default">
@@ -67,8 +79,8 @@
     </div>
 </div>
 
-<div class="col-xs-12">
-    <table class="table table-hover table-bordered table-striped table-condensed">
+<div class="col-xs-6">
+    <table id="datatable-mysql" class="table table-hover table-bordered table-striped table-condensed">
         <thead>
         <tr>
             <th colspan="5" style="text-align:center"><b>People</b></th>
@@ -91,6 +103,9 @@
             </tr>
         </tbody>
     </table>
+</div>
+
+<div class="clearfix">
 </div>
 
 <hr size="2" />
